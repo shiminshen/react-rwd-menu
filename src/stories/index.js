@@ -7,4 +7,10 @@ import Menu from '../Menu'
 
 import { Button, Welcome } from '@storybook/react/demo'
 
-storiesOf('Menu', module).add('simple', () => <Menu />)
+storiesOf('Menu', module).add('simple', () =>
+  <Menu>
+    <div>Link 1</div>
+    <div>Link 2</div>
+    <div>Link 3</div>
+  </Menu>
+)
