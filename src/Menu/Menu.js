@@ -12,16 +12,25 @@ class Menu extends Component {
   }
 
   render () {
-    const { className } = this.props
+    const { className, menuClassName, iconClassName, mMenuClassName } = this.props
     return (
-      <div className={className}>
+      <div className={className || 'menu-wrapper'}>
         <div className='d-none d-md-block'>
-          { this.props.children }
+          <div className='rwd-menu'>
+            { this.props.children }
+          </div>
         </div>
         <div className='d-md-none'>
-          <div onClick={() => this.setState({ showMobileMenu: !this.state.showMobileMenu })}>Icon</div>
+          <div
+            className='menu-anchor'
+            onClick={() => this.setState({
+              showMobileMenu: !this.state.showMobileMenu
+            })}
+          >
+            Icon
+          </div>
           {
-            this.state.showMobileMenu && <div>{ this.props.children }</div>
+            this.state.showMobileMenu && <div className='rwd-m-menu'>{ this.props.children }</div>
           }
         </div>
       </div>
